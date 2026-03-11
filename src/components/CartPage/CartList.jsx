@@ -8,7 +8,7 @@ function CartList(props) {
 
   if (props.cart.length === 0) {
     return (
-      <h1 className="text-title text-center my-4">
+      <h1 className="text-title text-center my-4" role="status">
         Your cart is currently empty
       </h1>
     );

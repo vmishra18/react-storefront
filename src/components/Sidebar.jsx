@@ -12,7 +12,7 @@ function Sidebar() {
   }));
 
   return (
-    <SideWrapper show={sideBarOpen}>
+    <SideWrapper show={sideBarOpen} aria-label="Primary">
       <ul>
         {links.map((link) => (
           <li key={link.id}>

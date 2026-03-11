@@ -13,7 +13,13 @@ function Sidecart() {
   }));
 
   return (
-    <CartWrapper show={cartOpen} onClick={() => dispatch(handleCart())}>
+    <CartWrapper
+      show={cartOpen}
+      onClick={() => dispatch(handleCart())}
+      role="dialog"
+      aria-label="Shopping cart"
+      aria-hidden={!cartOpen}
+    >
       <ul>
         {cart.map((item) => (
           <li key={item.id} className="cart-item mb-4">

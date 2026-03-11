@@ -29,11 +29,24 @@ function Product({
             >
               <FaSearch className="icon" />
             </Link>
-            <WishlistIcon
-              className={`icon wishlist-icon ${wished ? "active" : ""}`}
+            <button
+              type="button"
+              className="product-icon-btn"
+              aria-label={`Toggle wishlist for ${product.title}`}
               onClick={() => onWishlist(product)}
-            />
-            <FaCartPlus className="icon" onClick={() => onCart(product.id)} />
+            >
+              <WishlistIcon
+                className={`icon wishlist-icon ${wished ? "active" : ""}`}
+              />
+            </button>
+            <button
+              type="button"
+              className="product-icon-btn"
+              aria-label={`Add ${product.title} to cart`}
+              onClick={() => onCart(product.id)}
+            >
+              <FaCartPlus className="icon" />
+            </button>
           </div>
         </div>
         <div className="card-body d-flex justify-content-between">
@@ -75,6 +88,15 @@ const ProductWrapper = styled.div`
     opacity: 0;
     display: flex;
     gap: 0.5rem;
+  }
+  .product-icon-btn {
+    background: transparent;
+    border: none;
+    padding: 0;
+  }
+  .product-icon-btn:focus-visible .icon {
+    outline: 2px solid var(--accentColor);
+    outline-offset: 3px;
   }
   .icon {
     font-size: 2rem;

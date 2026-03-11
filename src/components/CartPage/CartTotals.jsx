@@ -7,15 +7,17 @@ function CartTotals(props) {
     <div className="container">
       <div className="row">
         <div className="col text-title text-center my-4">
-          <button
-            className="btn btn-outline-danger text-capitalize mb-4"
-            onClick={props.clearCart}
-          >
-            clear cart
-          </button>
-          <h3>subtotal: ${props.cartSubTotal}</h3>
-          <h3>tax: ${props.cartTax}</h3>
-          <h3>total: ${props.cartTotal}</h3>
+          <div className="section-card d-inline-block">
+            <button
+              className="btn btn-outline-danger text-capitalize mb-4"
+              onClick={props.clearCart}
+            >
+              clear cart
+            </button>
+            <h3>subtotal: ${props.cartSubTotal}</h3>
+            <h3>tax: ${props.cartTax}</h3>
+            <h3>total: ${props.cartTotal}</h3>
+          </div>
         </div>
       </div>
     </div>

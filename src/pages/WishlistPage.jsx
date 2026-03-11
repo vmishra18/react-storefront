@@ -21,7 +21,7 @@ function WishlistPage() {
         <div className="container">
           <Title title="your wishlist" center />
           {wishlist.length === 0 ? (
-            <div className="text-center text-title py-5">
+            <div className="text-center text-title py-5" role="status">
               your wishlist is empty
               <div className="mt-4">
                 <Link to="/products" className="main-link">
@@ -50,12 +50,14 @@ function WishlistPage() {
                         <div className="mt-auto d-flex flex-wrap gap-2">
                           <button
                             className="main-link"
+                            aria-label={`Add ${item.title} to cart`}
                             onClick={() => dispatch(addToCart(item.id))}
                           >
                             add to cart
                           </button>
                           <button
                             className="btn btn-outline-secondary"
+                            aria-label={`Remove ${item.title} from wishlist`}
                             onClick={() => dispatch(removeWishlistItem(item.id))}
                           >
                             remove
@@ -69,6 +71,7 @@ function WishlistPage() {
               <div className="text-center mt-4">
                 <button
                   className="btn btn-outline-danger"
+                  aria-label="Clear wishlist"
                   onClick={() => dispatch(clearWishlist())}
                 >
                   clear wishlist

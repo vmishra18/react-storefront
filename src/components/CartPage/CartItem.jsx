@@ -7,9 +7,9 @@ import {
 
 function CartItem({ item, onIncrement, onDecrement, onRemove }) {
   return (
-    <div className="row mt-5 mt-lg-0 text-capitalize text-center align-items-center">
+    <div className="row mt-5 mt-lg-0 text-capitalize text-center align-items-center cart-row">
       <div className="col-10 mx-auto col-lg-2">
-        <img src={item.image} alt="item" width="60" className="img-fluid" />
+        <img src={item.image} alt={item.title} width="64" className="img-fluid" />
       </div>
       <div className="col-10 mx-auto col-lg-2 pb-2">
         <span className="d-lg-none">product: </span>
@@ -21,26 +21,38 @@ function CartItem({ item, onIncrement, onDecrement, onRemove }) {
       <div className="col-10 mx-auto col-lg-2 my-2 my-lg-0">
         <div className="d-flex justify-content-center">
           <div>
-            <FaChevronCircleDown
-              className="cart-icon text-primary"
+            <button
+              type="button"
+              className="icon-button small"
+              aria-label={`Decrease quantity for ${item.title}`}
               onClick={() => onDecrement(item.id)}
-            />
+            >
+              <FaChevronCircleDown />
+            </button>
             <span className="text-title text-muted mx-3">{item.count}</span>
-            <FaChevronCircleUp
-              className="cart-icon text-primary"
+            <button
+              type="button"
+              className="icon-button small"
+              aria-label={`Increase quantity for ${item.title}`}
               onClick={() => onIncrement(item.id)}
-            />
+            >
+              <FaChevronCircleUp />
+            </button>
           </div>
         </div>
       </div>
       <div className="col-10 mx-auto col-lg-2 pb-2">
-        <FaTrash
-          className="text-danger cart-icon"
+        <button
+          type="button"
+          className="icon-button small"
+          aria-label={`Remove ${item.title} from cart`}
           onClick={() => onRemove(item.id)}
-        />
+        >
+          <FaTrash className="text-danger" />
+        </button>
       </div>
       <div className="col-10 mx-auto col-lg-2 pb-2">
-        <strong className="text-muted">item total: {item.count}</strong>
+        <strong className="text-muted">item total: ${item.total}</strong>
       </div>
     </div>
   );
