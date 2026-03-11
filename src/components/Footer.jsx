@@ -30,12 +30,12 @@ const mapStatesToProps = ({ products }) => {
 };
 
 const FooterWrapper = styled.footer`
-  background: linear-gradient(135deg, rgba(2, 6, 23, 0.95), rgba(15, 23, 42, 0.95));
-  color: var(--textPrimary);
-  border-top: 1px solid rgba(148, 163, 184, 0.2);
+  background: var(--surface);
+  color: var(--ink);
+  border-top: 1px solid var(--borderColor);
   .icon {
     font-size: 1.5rem;
-    color: var(--textPrimary);
+    color: var(--ink);
     transition: var(--mainTransition);
   }
   .icon:hover {

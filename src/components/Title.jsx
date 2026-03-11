@@ -17,7 +17,7 @@ const TitleWrapper = styled.div`
   .title-underline {
     height: 0.25rem;
     width: 6rem;
-    background: linear-gradient(90deg, #ff7a18 0%, #22d3ee 100%);
+    background: linear-gradient(90deg, #0f766e 0%, #f97316 100%);
     margin: ${props => (props.center ? "0 auto" : "0")};
     border-radius: 999px;
   }

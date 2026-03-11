@@ -48,30 +48,30 @@ function Services() {
 }
 
 const ServicesWrapper = styled.div`
-  background: linear-gradient(120deg, rgba(255, 122, 24, 0.08), rgba(34, 211, 238, 0.08));
-  border-top: 1px solid rgba(148, 163, 184, 0.2);
-  border-bottom: 1px solid rgba(148, 163, 184, 0.2);
+  background: linear-gradient(120deg, rgba(15, 118, 110, 0.08), rgba(249, 115, 22, 0.08));
+  border-top: 1px solid var(--borderColor);
+  border-bottom: 1px solid var(--borderColor);
   .service-card {
-    background: rgba(17, 24, 39, 0.9);
-    border-radius: 20px;
+    background: var(--surface);
+    border-radius: var(--radiusLg);
     padding: 2rem 1.5rem;
-    border: 1px solid rgba(148, 163, 184, 0.2);
+    border: 1px solid var(--borderColor);
     box-shadow: var(--shadowSoft);
   }
   .service-icon {
     font-size: 2.5rem;
-    color: var(--accentColor);
+    color: var(--primaryColor);
     width: 68px;
     height: 68px;
     margin: 0 auto;
     border-radius: 18px;
-    background: rgba(15, 23, 42, 0.9);
+    background: var(--surfaceAlt);
     display: grid;
     place-items: center;
-    box-shadow: 0 12px 25px rgba(2, 6, 23, 0.4);
+    box-shadow: 0 12px 25px rgba(15, 23, 42, 0.1);
   }
   p {
-    color: var(--textMuted);
+    color: var(--muted);
   }
 `;
 

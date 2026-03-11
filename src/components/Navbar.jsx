@@ -58,10 +58,10 @@ const NavWrapper = styled.nav`
   position: sticky;
   top: 0;
   width: 100%;
-  padding: 1rem 1.75rem;
-  background: rgba(11, 16, 32, 0.92);
-  border-bottom: 1px solid rgba(148, 163, 184, 0.2);
-  box-shadow: 0 16px 40px rgba(2, 6, 23, 0.55);
+  padding: 0.9rem 1.75rem;
+  background: rgba(255, 255, 255, 0.92);
+  border-bottom: 1px solid var(--borderColor);
+  box-shadow: 0 16px 40px rgba(15, 23, 42, 0.08);
   backdrop-filter: blur(10px);
   z-index: 10;
   .nav-center {
@@ -80,25 +80,25 @@ const NavWrapper = styled.nav`
     display: inline-flex;
     align-items: center;
     gap: 0.75rem;
-    color: var(--textPrimary);
+    color: var(--ink);
     text-decoration: none;
     font-family: 'Playfair Display', serif;
-    font-size: 1.25rem;
-    letter-spacing: 0.35rem;
+    font-size: 1.15rem;
+    letter-spacing: 0.28rem;
     text-transform: uppercase;
   }
   img {
-    height: 34px;
-    filter: drop-shadow(0 6px 20px rgba(34, 211, 238, 0.35));
+    height: 32px;
+    filter: drop-shadow(0 6px 16px rgba(15, 118, 110, 0.2));
   }
   .nav-icon {
     font-size: 1.5rem;
     cursor: pointer;
-    color: var(--textPrimary);
+    color: var(--ink);
     transition: var(--mainTransition);
   }
   .icon-button:hover .nav-icon {
-    color: var(--accentColor);
+    color: var(--primaryColor);
   }
   .nav-actions {
     display: flex;
@@ -107,26 +107,26 @@ const NavWrapper = styled.nav`
   }
   .nav-action {
     position: relative;
-    color: var(--textPrimary);
+    color: var(--ink);
     text-decoration: none;
     display: flex;
     align-items: center;
     justify-content: center;
   }
   .nav-action:visited {
-    color: var(--textPrimary);
+    color: var(--ink);
   }
   .nav-count {
     position: absolute;
-    background: linear-gradient(135deg, #ff7a18 0%, #ffb347 100%);
-    color: #0f172a;
+    background: linear-gradient(135deg, #0f766e 0%, #14b8a6 100%);
+    color: #ffffff;
     font-size: 0.85rem;
     top: -8px;
     right: -8px;
     min-width: 20px;
     padding: 0 6px;
     border-radius: 999px;
-    box-shadow: 0 10px 20px rgba(255, 122, 24, 0.4);
+    box-shadow: 0 10px 20px rgba(15, 118, 110, 0.35);
     font-weight: 600;
     text-align: center;
   }

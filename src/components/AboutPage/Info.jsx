@@ -12,7 +12,7 @@ function Info() {
               src={aboutBcg}
               className="img-fluid img-thumbnail"
               alt="About Us"
-              style={{ background: "var(--darkGrey)" }}
+              style={{ background: "var(--surfaceAlt)" }}
             />
           </div>
           <div className="col-10 mx-auto col-md-6 my-3">

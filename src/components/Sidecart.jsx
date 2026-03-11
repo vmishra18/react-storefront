@@ -47,10 +47,10 @@ const CartWrapper = styled.div`
   right: 0;
   width: 100%;
   height: 100%;
-  background: rgba(11, 16, 32, 0.98);
+  background: rgba(255, 255, 255, 0.98);
   z-index: 9;
-  border-left: 1px solid rgba(148, 163, 184, 0.2);
-  box-shadow: -20px 0 50px rgba(2, 6, 23, 0.55);
+  border-left: 1px solid var(--borderColor);
+  box-shadow: -20px 0 50px rgba(15, 23, 42, 0.12);
   backdrop-filter: blur(10px);
   transform: ${(props) => (props.show ? 'translateX(0)' : 'translateX(100%)')};
   transition: var(--mainTransition);
