@@ -1,88 +1,63 @@
 # Tech Shop
 
-A modern React e-commerce application built with Vite, React 18, Redux, and React Router v6.
+Tech Shop is a small, fast storefront demo built with React + Vite. It’s intentionally lightweight, but still covers the core e‑commerce flows: browse, filter, add to cart, and now a wishlist that persists across sessions.
 
-## Features
+## What’s Inside
 
-- 🛍️ Product catalog with filtering and search
-- 🛒 Shopping cart functionality
+- 🛍️ Product catalog with search + filters
+- 🛒 Cart with totals and quick access
 - 💖 Wishlist with localStorage persistence
-- 📱 Responsive design with Bootstrap 5
-- 🎨 Styled with Styled Components
-- 🔄 State management with Redux
-- 🚀 Fast development with Vite
+- 📱 Responsive layout built on Bootstrap 5
+- 🎨 Styled Components for custom UI polish
+- 🔄 Redux (Thunk) for state management
 
 ## Tech Stack
 
-- **Build Tool**: Vite 7.1.0
-- **Framework**: React 18.2.0
+- **Build Tool**: Vite
+- **Framework**: React 18
 - **Routing**: React Router v6
-- **State Management**: Redux with Redux Thunk
+- **State**: Redux + Redux Thunk
 - **Styling**: Bootstrap 5 + Styled Components
 - **Icons**: React Icons
 
-## Getting Started
+## Quick Start
 
 ### Prerequisites
 
-- Node.js (version 16 or higher)
+- Node.js 16+
 - npm or yarn
 
-### Installation
+### Install
 
-1. Clone the repository:
-```bash
-git clone <repository-url>
-cd react-tech-shop
-```
-
-2. Install dependencies:
 ```bash
 npm install
 ```
 
-### Development
+### Run Locally
 
-Start the development server:
 ```bash
 npm run dev
 ```
 
-The application will be available at `http://localhost:3000`
+Vite will print the local URL (typically `http://localhost:5173`).
 
-### Building for Production
+### Build + Preview
 
-Build the application:
 ```bash
 npm run build
-```
-
-Preview the production build:
-```bash
 npm run preview
 ```
 
 ## Deployment
 
-### Vercel
+This project is configured for Vercel with proper client-side routing support.
 
-This application is configured for deployment on Vercel with proper routing support.
-
-To deploy to Vercel:
-
-1. Install Vercel CLI:
 ```bash
 npm i -g vercel
-```
-
-2. Deploy:
-```bash
 vercel
 ```
 
-Or connect your GitHub repository to Vercel for automatic deployments.
-
-**Note**: The application uses BrowserRouter with Vercel's rewrite rules for proper client-side routing.
+If you connect the GitHub repo in Vercel, it will deploy automatically on push.
 
 ## Project Structure
 
@@ -103,31 +78,16 @@ src/
 └── index.jsx          # Application entry point
 ```
 
-## Migration from Create React App
+## Why Vite
 
-This project was successfully migrated from Create React App to Vite. Key changes include:
+This project originally started as Create React App and was migrated to Vite for a faster dev loop and smaller baseline bundle.
 
-- ✅ Updated to React 18 with `createRoot` API
-- ✅ Migrated to React Router v6 with `Routes` and `Route` components
-- ✅ Updated to Bootstrap 5 for better compatibility
-- ✅ Upgraded all dependencies to latest stable versions
-- ✅ Configured Vite for optimal development experience
-- ✅ Fixed security vulnerabilities in dependencies
-
-## Available Scripts
+## Scripts
 
 - `npm run dev` - Start development server
 - `npm run build` - Build for production
 - `npm run preview` - Preview production build
 
-## Contributing
-
-1. Fork the repository
-2. Create a feature branch
-3. Make your changes
-4. Test thoroughly
-5. Submit a pull request
-
 ## License
 
-This project is licensed under the MIT License.
+MIT
