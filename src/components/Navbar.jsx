@@ -16,17 +16,38 @@ function Navbar() {
   return (
     <NavWrapper>
       <div className="nav-center">
-        <FaBars className="nav-icon" onClick={() => dispatch(handleSidebar())} />
-        <img src={logo} alt="tech shop logo" />
+        <div className="nav-left">
+          <button
+            type="button"
+            className="icon-button"
+            aria-label="Open menu"
+            onClick={() => dispatch(handleSidebar())}
+          >
+            <FaBars className="nav-icon" />
+          </button>
+        </div>
+
+        <Link to="/" className="nav-brand" aria-label="Tech Shop home">
+          <img src={logo} alt="Tech Shop" />
+          <span className="brand-text">Tech Shop</span>
+        </Link>
+
         <div className="nav-actions">
-          <Link to="/wishlist" className="nav-action" aria-label="wishlist">
+          <Link to="/wishlist" className="icon-button nav-action" aria-label="Wishlist">
             <FaHeart className="nav-icon" />
-            <div className="nav-count">{wishlistCount}</div>
+            <span className="nav-count">{wishlistCount}</span>
+            <span className="sr-only">items in wishlist</span>
           </Link>
-          <div className="nav-action">
-            <FaCartPlus className="nav-icon" onClick={() => dispatch(handleCart())} />
-            <div className="nav-count">{cartItems}</div>
-          </div>
+          <button
+            type="button"
+            className="icon-button nav-action"
+            aria-label="Open cart"
+            onClick={() => dispatch(handleCart())}
+          >
+            <FaCartPlus className="nav-icon" />
+            <span className="nav-count">{cartItems}</span>
+            <span className="sr-only">items in cart</span>
+          </button>
         </div>
       </div>
     </NavWrapper>
@@ -44,11 +65,27 @@ const NavWrapper = styled.nav`
   backdrop-filter: blur(10px);
   z-index: 10;
   .nav-center {
-    display: flex;
+    display: grid;
+    grid-template-columns: auto 1fr auto;
     align-items: center;
-    justify-content: space-between;
     max-width: 1170px;
     margin: 0 auto;
+  }
+  .nav-left {
+    display: flex;
+    align-items: center;
+  }
+  .nav-brand {
+    justify-self: center;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.75rem;
+    color: var(--textPrimary);
+    text-decoration: none;
+    font-family: 'Playfair Display', serif;
+    font-size: 1.25rem;
+    letter-spacing: 0.35rem;
+    text-transform: uppercase;
   }
   img {
     height: 34px;
@@ -60,7 +97,7 @@ const NavWrapper = styled.nav`
     color: var(--textPrimary);
     transition: var(--mainTransition);
   }
-  .nav-icon:hover {
+  .icon-button:hover .nav-icon {
     color: var(--accentColor);
   }
   .nav-actions {
@@ -84,11 +121,26 @@ const NavWrapper = styled.nav`
     background: linear-gradient(135deg, #ff7a18 0%, #ffb347 100%);
     color: #0f172a;
     font-size: 0.85rem;
-    top: -10px;
-    right: -10px;
-    padding: 0 7px;
+    top: -8px;
+    right: -8px;
+    min-width: 20px;
+    padding: 0 6px;
     border-radius: 999px;
     box-shadow: 0 10px 20px rgba(255, 122, 24, 0.4);
+    font-weight: 600;
+    text-align: center;
+  }
+  @media (max-width: 768px) {
+    padding: 0.85rem 1.25rem;
+    .nav-brand {
+      letter-spacing: 0.25rem;
+      font-size: 1.05rem;
+    }
+  }
+  @media (max-width: 576px) {
+    .brand-text {
+      display: none;
+    }
   }
 `;
 
