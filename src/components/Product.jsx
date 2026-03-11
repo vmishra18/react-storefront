@@ -47,23 +47,24 @@ function Product({
 
 const ProductWrapper = styled.div`
   .card {
-    box-shadow: 5px 5px 5px 0px rgba(0, 0, 0, 0.3);
     transition: var(--mainTransition);
     height: 100%;
+    border: 1px solid var(--borderColor);
+    border-radius: 18px;
   }
   .card:hover {
-    box-shadow: 7px 10px 5px 0px rgba(0, 0, 0, 0.5);
     cursor: pointer;
   }
   .card-img-top {
     transition: var(--mainTransition);
   }
   .card:hover .card-img-top {
-    transform: scale(1.15);
-    opacity: 0.2;
+    transform: scale(1.08);
+    opacity: 0.85;
   }
   .img-container {
     position: relative;
+    background: linear-gradient(145deg, rgba(249, 115, 22, 0.1), rgba(14, 165, 167, 0.1));
   }
   .product-icons {
     transition: var(--mainTransition);
@@ -72,26 +73,34 @@ const ProductWrapper = styled.div`
     left: 50%;
     transform: translate(-50%, -50%);
     opacity: 0;
+    display: flex;
+    gap: 0.5rem;
   }
   .icon {
-    font-size: 2.5rem;
-    margin: 1rem;
-    padding: 0.5rem;
+    font-size: 2rem;
+    margin: 0.5rem;
+    padding: 0.6rem;
+    color: var(--mainBlack);
+    background: var(--mainWhite);
+    border-radius: 0.9rem;
+    box-shadow: 0 12px 20px rgba(15, 23, 42, 0.2);
+    transition: var(--mainTransition);
+  }
+  .icon:hover {
+    transform: translateY(-2px);
     color: var(--primaryColor);
-    background: var(--mainBlack);
-    border-radius: 0.5rem;
   }
   .wishlist-icon.active {
-    color: #ff6b6b;
-    background: var(--mainWhite);
+    color: var(--mainWhite);
+    background: linear-gradient(135deg, #f97316 0%, #f59e0b 100%);
   }
   .card:hover .product-icons {
     opacity: 1;
   }
   .card-body {
-    font-weight: bold;
+    font-weight: 600;
     text-transform: uppercase;
-    letter-spacing: 2px;
+    letter-spacing: 1px;
   }
 `;
 

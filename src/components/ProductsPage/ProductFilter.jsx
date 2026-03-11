@@ -95,6 +95,11 @@ const FilterWrapper = styled.div`
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   grid-column-gap: 2rem;
   grid-row-gap: 1rem;
+  padding: 1.25rem;
+  border-radius: 18px;
+  border: 1px solid var(--borderColor);
+  background: var(--surface);
+  box-shadow: var(--shadowSoft);
   label {
     font-weight: bold;
     text-transform: capitalize;
@@ -103,9 +108,9 @@ const FilterWrapper = styled.div`
   .filter-price {
     display: block;
     width: 100%;
-    background: transparent;
-    border-radius: 0.5rem;
-    border: 2px solid var(--darkGrey);
+    background: var(--surfaceAlt);
+    border-radius: 0.9rem;
+    border: 1px solid var(--borderColor);
   }
 `;
 

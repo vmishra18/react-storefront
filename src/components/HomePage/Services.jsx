@@ -48,10 +48,20 @@ function Services() {
 }
 
 const ServicesWrapper = styled.div`
-  background: rgba(95, 183, 234, 0.5);
+  background: linear-gradient(120deg, rgba(249, 115, 22, 0.12), rgba(14, 165, 167, 0.12));
+  border-top: 1px solid var(--borderColor);
+  border-bottom: 1px solid var(--borderColor);
   .service-icon {
     font-size: 2.5rem;
-    color: var(--primaryColor);
+    color: var(--mainBlack);
+    width: 64px;
+    height: 64px;
+    margin: 0 auto;
+    border-radius: 18px;
+    background: var(--surface);
+    display: grid;
+    place-items: center;
+    box-shadow: 0 12px 25px rgba(15, 23, 42, 0.12);
   }
   p {
     color: var(--darkGrey);

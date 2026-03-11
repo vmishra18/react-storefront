@@ -41,9 +41,11 @@ const CartWrapper = styled.div`
   right: 0;
   width: 100%;
   height: 100%;
-  background: var(--mainGrey);
-  z-index: 1;
-  border-left: 4px solid var(--primaryColor);
+  background: rgba(255, 255, 255, 0.98);
+  z-index: 9;
+  border-left: 1px solid var(--borderColor);
+  box-shadow: -20px 0 40px rgba(15, 23, 42, 0.12);
+  backdrop-filter: blur(10px);
   transform: ${(props) => (props.show ? 'translateX(0)' : 'translateX(100%)')};
   transition: var(--mainTransition);
   @media (min-width: 576px) {
@@ -56,6 +58,9 @@ const CartWrapper = styled.div`
   }
   .cart-item {
     list-style-type: none;
+    display: flex;
+    gap: 0.8rem;
+    align-items: center;
   }
 `;
 

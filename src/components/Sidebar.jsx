@@ -32,9 +32,11 @@ const SideWrapper = styled.nav`
   left: 0;
   width: 100%;
   height: 100%;
-  background: var(--mainGrey);
-  z-index: 1;
-  border-right: 4px solid var(--primaryColor);
+  background: rgba(255, 255, 255, 0.98);
+  z-index: 9;
+  border-right: 1px solid var(--borderColor);
+  box-shadow: 20px 0 40px rgba(15, 23, 42, 0.12);
+  backdrop-filter: blur(10px);
   transition: var(--mainTransition);
   transform: ${(props) => (props.show ? 'translateX(0)' : 'translateX(-100%)')};
   ul {
@@ -49,11 +51,12 @@ const SideWrapper = styled.nav`
     padding: 0.5rem 1.5rem;
     background: transparent;
     transition: var(--mainTransition);
+    font-weight: 600;
   }
   .sidebar-link:hover {
-    background: var(--primaryColor);
-    color: var(--mainWhite);
-    padding: 0.5rem 1.5rem 0.5rem 2.5rem;
+    background: var(--surfaceAlt);
+    color: var(--mainBlack);
+    padding: 0.5rem 1.5rem 0.5rem 2.2rem;
     text-decoration: none;
   }
   @media (min-width: 576px) {

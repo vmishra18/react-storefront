@@ -30,15 +30,16 @@ const mapStatesToProps = ({ products }) => {
 };
 
 const FooterWrapper = styled.footer`
-  background: var(--darkGrey);
+  background: var(--mainBlack);
   color: var(--mainWhite);
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
   .icon {
     font-size: 1.5rem;
     color: var(--mainWhite);
     transition: var(--mainTransition);
   }
   .icon:hover {
-    color: var(--primaryColor);
+    color: var(--accentColor);
     cursor: pointer;
   }
 `;
