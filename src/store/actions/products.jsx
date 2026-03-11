@@ -12,7 +12,12 @@ import {
   DECREMENT,
   REMOVE,
   FILTER_PRODUCTS,
-  SORT_DATA
+  SORT_DATA,
+  TOGGLE_WISHLIST,
+  GET_STORAGE_WISHLIST,
+  SYNC_WISHLIST,
+  REMOVE_WISHLIST,
+  CLEAR_WISHLIST
 } from "../types";
 
 export const handleSidebar = () => {
@@ -30,6 +35,7 @@ export const handleCart = () => {
 export const getProducts = () => dispatch => {
   dispatch({ type: GET_PRODUCTS });
   dispatch({ type: GET_STORAGE_CART });
+  dispatch({ type: GET_STORAGE_WISHLIST });
   dispatch({ type: SET_TOTAL });
 };
 
@@ -72,4 +78,23 @@ export const clearCart = () => dispatch => {
 export const handleChange = e => dispatch => {
   dispatch({ type: FILTER_PRODUCTS, payload: e });
   dispatch({ type: SORT_DATA });
+};
+
+export const toggleWishlist = product => dispatch => {
+  dispatch({ type: TOGGLE_WISHLIST, payload: product });
+  dispatch({ type: SYNC_WISHLIST });
+};
+
+export const removeWishlistItem = id => dispatch => {
+  dispatch({ type: REMOVE_WISHLIST, payload: id });
+  dispatch({ type: SYNC_WISHLIST });
+};
+
+export const clearWishlist = () => dispatch => {
+  dispatch({ type: CLEAR_WISHLIST });
+  dispatch({ type: SYNC_WISHLIST });
+};
+
+export const getWishlist = () => dispatch => {
+  dispatch({ type: GET_STORAGE_WISHLIST });
 };

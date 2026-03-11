@@ -6,6 +6,7 @@ A modern React e-commerce application built with Vite, React 18, Redux, and Reac
 
 - 🛍️ Product catalog with filtering and search
 - 🛒 Shopping cart functionality
+- 💖 Wishlist with localStorage persistence
 - 📱 Responsive design with Bootstrap 5
 - 🎨 Styled with Styled Components
 - 🔄 State management with Redux
@@ -93,6 +94,7 @@ src/
 │   ├── HomePage/       # Home page components
 │   └── ProductsPage/   # Product listing components
 ├── pages/              # Page components
+│   ├── WishlistPage.jsx # Wishlist page
 ├── store/              # Redux store configuration
 │   ├── actions/        # Redux actions
 │   └── reducers/       # Redux reducers

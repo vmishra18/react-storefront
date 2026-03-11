@@ -1,22 +1,32 @@
 import React from 'react';
 import styled from 'styled-components';
 import { useSelector, useDispatch } from 'react-redux';
-import { FaBars, FaCartPlus } from 'react-icons/fa';
+import { FaBars, FaCartPlus, FaHeart } from 'react-icons/fa';
 import logo from '../images/logo.svg';
 import { handleSidebar, handleCart } from '../store/actions/products';
+import { Link } from 'react-router-dom';
 
 function Navbar() {
   const dispatch = useDispatch();
-  const cartItems = useSelector((state) => state.products.cartItems);
+  const { cartItems, wishlistCount } = useSelector((state) => ({
+    cartItems: state.products.cartItems,
+    wishlistCount: state.products.wishlist.length,
+  }));
 
   return (
     <NavWrapper>
       <div className="nav-center">
         <FaBars className="nav-icon" onClick={() => dispatch(handleSidebar())} />
         <img src={logo} alt="tech shop logo" />
-        <div className="nav-cart">
-          <FaCartPlus className="nav-icon" onClick={() => dispatch(handleCart())} />
-          <div className="cart-items">{cartItems}</div>
+        <div className="nav-actions">
+          <Link to="/wishlist" className="nav-action" aria-label="wishlist">
+            <FaHeart className="nav-icon" />
+            <div className="nav-count">{wishlistCount}</div>
+          </Link>
+          <div className="nav-action">
+            <FaCartPlus className="nav-icon" onClick={() => dispatch(handleCart())} />
+            <div className="nav-count">{cartItems}</div>
+          </div>
         </div>
       </div>
     </NavWrapper>
@@ -42,10 +52,20 @@ const NavWrapper = styled.nav`
     font-size: 1.5rem;
     cursor: pointer;
   }
-  .nav-cart {
-    position: relative;
+  .nav-actions {
+    display: flex;
+    align-items: center;
+    gap: 1.25rem;
   }
-  .cart-items {
+  .nav-action {
+    position: relative;
+    color: var(--mainBlack);
+    text-decoration: none;
+  }
+  .nav-action:visited {
+    color: var(--mainBlack);
+  }
+  .nav-count {
     position: absolute;
     background: var(--primaryColor);
     color: var(--mainWhite);

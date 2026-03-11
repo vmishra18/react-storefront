@@ -15,7 +15,12 @@ import {
   DECREMENT,
   REMOVE,
   FILTER_PRODUCTS,
-  SORT_DATA
+  SORT_DATA,
+  TOGGLE_WISHLIST,
+  GET_STORAGE_WISHLIST,
+  SYNC_WISHLIST,
+  REMOVE_WISHLIST,
+  CLEAR_WISHLIST
 } from "../types";
 
 const initialState = {
@@ -31,6 +36,7 @@ const initialState = {
   storeProducts: [],
   filteredProducts: [],
   featuredProducts: [],
+  wishlist: [],
   singleProduct: {},
   loading: false,
   search: "",
@@ -49,8 +55,8 @@ function productReducer(state = initialState, action) {
       return { ...state, cartOpen: !state.cartOpen };
     case GET_PRODUCTS:
       const featured = items.filter(item => item.featured === true);
-      let maxPrice = Math.max(...state.storeProducts.map(item => item.price));
-      let minPrice = Math.min(...state.storeProducts.map(item => item.price));
+      let maxPrice = Math.max(...items.map(item => item.price));
+      let minPrice = Math.min(...items.map(item => item.price));
       return {
         ...state,
         storeProducts: items,
@@ -123,6 +129,11 @@ function productReducer(state = initialState, action) {
         ? JSON.parse(localStorage.getItem("singleProduct"))
         : {};
       return { ...state, singleProduct: single };
+    case GET_STORAGE_WISHLIST:
+      const wishlist = localStorage.getItem("wishlist")
+        ? JSON.parse(localStorage.getItem("wishlist"))
+        : [];
+      return { ...state, wishlist };
     case CLEAR_CART:
       localStorage.removeItem("cart");
       return { ...state, cart: [] };
@@ -143,6 +154,29 @@ function productReducer(state = initialState, action) {
     case REMOVE:
       const rmCart = state.cart.filter(item => item.id !== action.payload);
       return { ...state, cart: rmCart };
+    case TOGGLE_WISHLIST:
+      const wishlistItem = action.payload;
+      const wishlistExists = state.wishlist.find(
+        item => item.id === wishlistItem.id
+      );
+      if (wishlistExists) {
+        return {
+          ...state,
+          wishlist: state.wishlist.filter(item => item.id !== wishlistItem.id)
+        };
+      }
+      return { ...state, wishlist: [...state.wishlist, wishlistItem] };
+    case REMOVE_WISHLIST:
+      return {
+        ...state,
+        wishlist: state.wishlist.filter(item => item.id !== action.payload)
+      };
+    case CLEAR_WISHLIST:
+      localStorage.removeItem("wishlist");
+      return { ...state, wishlist: [] };
+    case SYNC_WISHLIST:
+      localStorage.setItem("wishlist", JSON.stringify(state.wishlist));
+      return state;
 
     case FILTER_PRODUCTS:
       const { name, type } = action.payload.target;

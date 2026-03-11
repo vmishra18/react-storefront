@@ -6,7 +6,8 @@ import Product from "../Product";
 import {
   getProducts,
   setSingleProduct,
-  addToCart
+  addToCart,
+  toggleWishlist
 } from "../../store/actions/products";
 
 function Featured(props) {
@@ -26,6 +27,8 @@ function Featured(props) {
               product={product}
               onSingle={props.setSingleProduct}
               onCart={props.addToCart}
+              onWishlist={props.toggleWishlist}
+              wished={props.wishlistIds.includes(product.id)}
             />
           ))}
         </div>
@@ -41,11 +44,15 @@ function Featured(props) {
   );
 }
 const mapStatesToProps = ({ products }) => {
-  return { featured: products.featuredProducts };
+  return {
+    featured: products.featuredProducts,
+    wishlistIds: products.wishlist.map(item => item.id)
+  };
 };
 
 export default connect(mapStatesToProps, {
   getProducts,
   setSingleProduct,
-  addToCart
+  addToCart,
+  toggleWishlist
 })(Featured);

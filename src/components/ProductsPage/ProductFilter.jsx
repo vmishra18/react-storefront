@@ -6,8 +6,8 @@ import { handleChange } from "../../store/actions/products";
 function ProductFilter(props) {
   const {
     search,
-    min,
-    max,
+    minPrice,
+    maxPrice,
     company,
     price,
     shipping,
@@ -64,8 +64,8 @@ function ProductFilter(props) {
               type="range"
               name="price"
               id="price"
-              min={min}
-              max={max}
+              min={minPrice}
+              max={maxPrice}
               className="filter-price"
               value={price}
               onChange={handleChange}
