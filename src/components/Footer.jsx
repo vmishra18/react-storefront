@@ -30,16 +30,16 @@ const mapStatesToProps = ({ products }) => {
 };
 
 const FooterWrapper = styled.footer`
-  background: var(--mainBlack);
-  color: var(--mainWhite);
-  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  background: linear-gradient(135deg, rgba(2, 6, 23, 0.95), rgba(15, 23, 42, 0.95));
+  color: var(--textPrimary);
+  border-top: 1px solid rgba(148, 163, 184, 0.2);
   .icon {
     font-size: 1.5rem;
-    color: var(--mainWhite);
+    color: var(--textPrimary);
     transition: var(--mainTransition);
   }
   .icon:hover {
-    color: var(--accentColor);
+    color: var(--primaryColor);
     cursor: pointer;
   }
 `;

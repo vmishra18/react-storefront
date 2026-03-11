@@ -38,9 +38,9 @@ const NavWrapper = styled.nav`
   top: 0;
   width: 100%;
   padding: 1rem 1.75rem;
-  background: rgba(255, 255, 255, 0.92);
-  border-bottom: 1px solid var(--borderColor);
-  box-shadow: 0 16px 30px rgba(15, 23, 42, 0.08);
+  background: rgba(11, 16, 32, 0.92);
+  border-bottom: 1px solid rgba(148, 163, 184, 0.2);
+  box-shadow: 0 16px 40px rgba(2, 6, 23, 0.55);
   backdrop-filter: blur(10px);
   z-index: 10;
   .nav-center {
@@ -50,14 +50,18 @@ const NavWrapper = styled.nav`
     max-width: 1170px;
     margin: 0 auto;
   }
+  img {
+    height: 34px;
+    filter: drop-shadow(0 6px 20px rgba(34, 211, 238, 0.35));
+  }
   .nav-icon {
     font-size: 1.5rem;
     cursor: pointer;
-    color: var(--mainBlack);
+    color: var(--textPrimary);
     transition: var(--mainTransition);
   }
   .nav-icon:hover {
-    color: var(--primaryColor);
+    color: var(--accentColor);
   }
   .nav-actions {
     display: flex;
@@ -66,25 +70,25 @@ const NavWrapper = styled.nav`
   }
   .nav-action {
     position: relative;
-    color: var(--mainBlack);
+    color: var(--textPrimary);
     text-decoration: none;
     display: flex;
     align-items: center;
     justify-content: center;
   }
   .nav-action:visited {
-    color: var(--mainBlack);
+    color: var(--textPrimary);
   }
   .nav-count {
     position: absolute;
-    background: linear-gradient(135deg, #f97316 0%, #f59e0b 100%);
-    color: var(--mainWhite);
+    background: linear-gradient(135deg, #ff7a18 0%, #ffb347 100%);
+    color: #0f172a;
     font-size: 0.85rem;
     top: -10px;
     right: -10px;
     padding: 0 7px;
     border-radius: 999px;
-    box-shadow: 0 6px 16px rgba(249, 115, 22, 0.35);
+    box-shadow: 0 10px 20px rgba(255, 122, 24, 0.4);
   }
 `;
 

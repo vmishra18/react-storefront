@@ -97,12 +97,13 @@ const FilterWrapper = styled.div`
   grid-row-gap: 1rem;
   padding: 1.25rem;
   border-radius: 18px;
-  border: 1px solid var(--borderColor);
-  background: var(--surface);
+  border: 1px solid rgba(148, 163, 184, 0.2);
+  background: rgba(17, 24, 39, 0.9);
   box-shadow: var(--shadowSoft);
   label {
     font-weight: bold;
     text-transform: capitalize;
+    color: var(--textPrimary);
   }
   .filter-item,
   .filter-price {

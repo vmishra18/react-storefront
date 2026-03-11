@@ -1,21 +1,23 @@
-@import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Sora:wght@300;400;500;600;700&display=swap');
 
 :root {
-  --primaryColor: #f97316;
-  --primaryGlow: rgba(249, 115, 22, 0.35);
-  --accentColor: #0ea5a7;
-  --primaryRGBA: rgba(15, 23, 42, 0.55);
-  --mainGrey: #f8f4ef;
-  --darkGrey: #4b5563;
-  --mainBlack: #0f172a;
+  --primaryColor: #ff7a18;
+  --accentColor: #22d3ee;
+  --primaryRGBA: rgba(15, 23, 42, 0.6);
+  --pageBg: #0b1020;
+  --surface: #111827;
+  --surfaceAlt: #182235;
+  --borderColor: rgba(148, 163, 184, 0.2);
+  --textPrimary: #e2e8f0;
+  --textMuted: #94a3b8;
   --mainWhite: #ffffff;
-  --surface: #ffffff;
-  --surfaceAlt: #fff7ed;
-  --borderColor: #e6ddd2;
-  --shadowSoft: 0 18px 40px rgba(15, 23, 42, 0.08);
-  --shadowLift: 0 18px 45px rgba(15, 23, 42, 0.12);
+  --mainBlack: #0b1020;
+  --darkGrey: #4b5563;
+  --mainGrey: #0f172a;
+  --shadowSoft: 0 20px 50px rgba(2, 6, 23, 0.35);
+  --shadowLift: 0 28px 60px rgba(2, 6, 23, 0.5);
   --mainTransition: all 0.25s ease;
-  --mainSpacing: 0.15rem;
+  --mainSpacing: 0.2rem;
 }
 
 *,
@@ -25,13 +27,13 @@
 }
 
 body {
-  font-family: 'Space Grotesk', sans-serif !important;
-  background-image: radial-gradient(circle at 20% 20%, rgba(14, 165, 167, 0.12), transparent 35%),
-    radial-gradient(circle at 85% 10%, rgba(249, 115, 22, 0.16), transparent 40%),
-    linear-gradient(180deg, #f8f4ef 0%, #f2efe9 60%, #efe8df 100%);
-  background-color: var(--mainGrey) !important;
-  color: var(--mainBlack) !important;
+  font-family: 'Sora', sans-serif !important;
+  background-color: var(--pageBg) !important;
+  color: var(--textPrimary) !important;
   min-height: 100vh;
+  background-image: radial-gradient(circle at 15% 20%, rgba(34, 211, 238, 0.15), transparent 45%),
+    radial-gradient(circle at 85% 0%, rgba(255, 122, 24, 0.2), transparent 50%),
+    linear-gradient(180deg, rgba(15, 23, 42, 0.85) 0%, rgba(11, 16, 32, 1) 70%);
 }
 
 img {
@@ -44,8 +46,12 @@ a {
   text-decoration: none;
 }
 
+section {
+  position: relative;
+}
+
 .text-title {
-  font-family: 'Fraunces', serif;
+  font-family: 'Playfair Display', serif;
   font-weight: 700;
   letter-spacing: var(--mainSpacing);
   text-transform: capitalize;
@@ -55,68 +61,79 @@ a {
   color: var(--primaryColor);
 }
 
+.text-muted {
+  color: var(--textMuted) !important;
+}
+
 .main-link {
   padding: 0.65rem 1.4rem;
-  background: linear-gradient(135deg, #f97316 0%, #f59e0b 100%);
-  color: var(--mainWhite);
+  background: linear-gradient(135deg, #ff7a18 0%, #ffb347 100%);
+  color: #0f172a;
   display: inline-flex;
   align-items: center;
   justify-content: center;
   gap: 0.4rem;
   text-transform: uppercase;
-  letter-spacing: var(--mainSpacing);
+  letter-spacing: 0.18rem;
   border: none;
   border-radius: 999px;
-  box-shadow: 0 12px 20px rgba(249, 115, 22, 0.25);
+  box-shadow: 0 16px 30px rgba(255, 122, 24, 0.35);
   transition: var(--mainTransition);
   font-weight: 600;
 }
 
 .main-link:hover {
   transform: translateY(-2px);
-  box-shadow: 0 16px 26px rgba(249, 115, 22, 0.3);
-  color: var(--mainWhite);
+  box-shadow: 0 20px 40px rgba(255, 122, 24, 0.45);
+  color: #0f172a;
 }
 
 .wishlist-link {
-  background: var(--mainBlack);
-  box-shadow: 0 12px 20px rgba(15, 23, 42, 0.25);
+  background: linear-gradient(135deg, #22d3ee 0%, #38bdf8 100%);
+  color: #0f172a;
+  box-shadow: 0 16px 30px rgba(34, 211, 238, 0.3);
 }
 
 .wishlist-link.active {
-  background: linear-gradient(135deg, #f97316 0%, #f59e0b 100%);
+  background: linear-gradient(135deg, #ff7a18 0%, #ffb347 100%);
 }
 
 .card {
-  border-radius: 18px;
+  border-radius: 20px;
   border: 1px solid var(--borderColor);
   background: var(--surface);
+  color: var(--textPrimary);
   box-shadow: var(--shadowSoft);
   transition: var(--mainTransition);
   overflow: hidden;
 }
 
 .card:hover {
-  transform: translateY(-6px);
+  transform: translateY(-8px);
   box-shadow: var(--shadowLift);
 }
 
 input,
 select,
 textarea {
-  padding: 0.45rem 0.6rem;
+  padding: 0.55rem 0.75rem;
   border-radius: 12px;
   border: 1px solid var(--borderColor);
-  background: var(--surface);
+  background: var(--surfaceAlt);
+  color: var(--textPrimary);
   transition: var(--mainTransition);
+}
+
+input::placeholder {
+  color: var(--textMuted);
 }
 
 input:focus,
 select:focus,
 textarea:focus {
   outline: none;
-  border-color: var(--primaryColor);
-  box-shadow: 0 0 0 3px rgba(249, 115, 22, 0.15);
+  border-color: var(--accentColor);
+  box-shadow: 0 0 0 3px rgba(34, 211, 238, 0.2);
 }
 
 button:disabled {
@@ -127,7 +144,7 @@ button:disabled {
 @keyframes floatIn {
   0% {
     opacity: 0;
-    transform: translateY(12px);
+    transform: translateY(18px);
   }
   100% {
     opacity: 1;

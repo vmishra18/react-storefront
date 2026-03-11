@@ -34,7 +34,7 @@ function Services() {
           {services.map(service => (
             <div
               key={service.id}
-              className="col-10 mx-auto col-sm-6 col-md-4 text-center my-3"
+              className="service-card col-10 mx-auto col-sm-6 col-md-4 text-center my-3"
             >
               <div className="service-icon">{service.icon}</div>
               <div className="mt-3 text-capitalize">{service.title}</div>
@@ -48,23 +48,30 @@ function Services() {
 }
 
 const ServicesWrapper = styled.div`
-  background: linear-gradient(120deg, rgba(249, 115, 22, 0.12), rgba(14, 165, 167, 0.12));
-  border-top: 1px solid var(--borderColor);
-  border-bottom: 1px solid var(--borderColor);
+  background: linear-gradient(120deg, rgba(255, 122, 24, 0.08), rgba(34, 211, 238, 0.08));
+  border-top: 1px solid rgba(148, 163, 184, 0.2);
+  border-bottom: 1px solid rgba(148, 163, 184, 0.2);
+  .service-card {
+    background: rgba(17, 24, 39, 0.9);
+    border-radius: 20px;
+    padding: 2rem 1.5rem;
+    border: 1px solid rgba(148, 163, 184, 0.2);
+    box-shadow: var(--shadowSoft);
+  }
   .service-icon {
     font-size: 2.5rem;
-    color: var(--mainBlack);
-    width: 64px;
-    height: 64px;
+    color: var(--accentColor);
+    width: 68px;
+    height: 68px;
     margin: 0 auto;
     border-radius: 18px;
-    background: var(--surface);
+    background: rgba(15, 23, 42, 0.9);
     display: grid;
     place-items: center;
-    box-shadow: 0 12px 25px rgba(15, 23, 42, 0.12);
+    box-shadow: 0 12px 25px rgba(2, 6, 23, 0.4);
   }
   p {
-    color: var(--darkGrey);
+    color: var(--textMuted);
   }
 `;
 
