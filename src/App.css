@@ -49,6 +49,16 @@ body {
   outline-color: var(--darkGrey);
 }
 
+.wishlist-link {
+  background: var(--mainBlack);
+  outline-color: var(--mainBlack);
+}
+
+.wishlist-link.active {
+  background: var(--primaryColor);
+  outline-color: var(--primaryColor);
+}
+
 .cart-icon {
   cursor: pointer;
 }

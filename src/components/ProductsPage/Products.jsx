@@ -6,7 +6,8 @@ import ProductFilter from "./ProductFilter";
 import {
   getProducts,
   setSingleProduct,
-  addToCart
+  addToCart,
+  toggleWishlist
 } from "../../store/actions/products";
 
 function Products(props) {
@@ -41,6 +42,8 @@ function Products(props) {
               product={product}
               onSingle={props.setSingleProduct}
               onCart={props.addToCart}
+              onWishlist={props.toggleWishlist}
+              wished={props.wishlistIds.includes(product.id)}
             />
           ))}
         </div>
@@ -50,11 +53,15 @@ function Products(props) {
 }
 
 const mapStatesToProps = ({ products }) => {
-  return { products: products.filteredProducts };
+  return {
+    products: products.filteredProducts,
+    wishlistIds: products.wishlist.map(item => item.id)
+  };
 };
 
 export default connect(mapStatesToProps, {
   getProducts,
   setSingleProduct,
-  addToCart
+  addToCart,
+  toggleWishlist
 })(Products);
