@@ -1,16 +1,19 @@
 import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
-import { addToCart, getStorageProduct } from '../store/actions/products';
+import { addToCart, getStorageProduct, toggleWishlist } from '../store/actions/products';
 import Hero from '../components/Hero';
 import singleProductImg from '../images/singleProductBcg.jpeg';
 
 function SingleProductPage() {
   const dispatch = useDispatch();
-  const { product, loading } = useSelector((state) => ({
+  const { product, loading, wishlist } = useSelector((state) => ({
     product: state.products.singleProduct,
     loading: state.products.loading,
+    wishlist: state.products.wishlist,
   }));
+  const hasProduct = product && product.id !== undefined;
+  const isWished = hasProduct && wishlist.some((item) => item.id === product.id);
 
   useEffect(() => {
     dispatch(getStorageProduct());
@@ -34,6 +37,13 @@ function SingleProductPage() {
               <p>{product.description}</p>
               <button className="main-link m-2" onClick={() => dispatch(addToCart(product.id))}>
                 add to cart
+              </button>
+              <button
+                className={`main-link m-2 wishlist-link ${isWished ? 'active' : ''}`}
+                onClick={() => hasProduct && dispatch(toggleWishlist(product))}
+                disabled={!hasProduct}
+              >
+                {isWished ? 'remove from wishlist' : 'add to wishlist'}
               </button>
               <Link to="/products" className="main-link m-2">
                 back to products

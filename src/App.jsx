@@ -13,6 +13,7 @@ import Products from './pages/ProductsPage';
 import Contact from './pages/ContactPage';
 import SingleProduct from './pages/SingleProductPage';
 import Cart from './pages/CartPage';
+import Wishlist from './pages/WishlistPage';
 import Default from './pages/Default';
 import { getProducts } from './store/actions/products';
 
@@ -36,6 +37,7 @@ function App() {
         <Route path="/contact" element={<Contact />} />
         <Route path="/products" element={<Products />} />
         <Route path="/products/:id" element={<SingleProduct />} />
+        <Route path="/wishlist" element={<Wishlist />} />
         <Route path="/cart" element={<Cart />} />
         <Route path="*" element={<Default />} />
       </Routes>

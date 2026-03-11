@@ -1,9 +1,17 @@
 import React from "react";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
-import { FaSearch, FaCartPlus } from "react-icons/fa";
+import { FaSearch, FaCartPlus, FaHeart, FaRegHeart } from "react-icons/fa";
 
-function Product({ product, onCart, onSingle }) {
+function Product({
+  product,
+  onCart,
+  onSingle,
+  onWishlist = () => {},
+  wished = false
+}) {
+  const WishlistIcon = wished ? FaHeart : FaRegHeart;
+
   return (
     <ProductWrapper className="col-10 mx-auto col-sm-8 col-md-6 col-lg-4 my-3">
       <div className="card">
@@ -21,6 +29,10 @@ function Product({ product, onCart, onSingle }) {
             >
               <FaSearch className="icon" />
             </Link>
+            <WishlistIcon
+              className={`icon wishlist-icon ${wished ? "active" : ""}`}
+              onClick={() => onWishlist(product)}
+            />
             <FaCartPlus className="icon" onClick={() => onCart(product.id)} />
           </div>
         </div>
@@ -68,6 +80,10 @@ const ProductWrapper = styled.div`
     color: var(--primaryColor);
     background: var(--mainBlack);
     border-radius: 0.5rem;
+  }
+  .wishlist-icon.active {
+    color: #ff6b6b;
+    background: var(--mainWhite);
   }
   .card:hover .product-icons {
     opacity: 1;

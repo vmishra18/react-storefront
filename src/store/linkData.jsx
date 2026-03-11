@@ -3,5 +3,6 @@ export const linkData = [
   { id: 2, text: "About", path: "/about" },
   { id: 3, text: "Products", path: "/products" },
   { id: 4, text: "Contact", path: "/contact" },
-  { id: 5, text: "Cart", path: "/cart" }
+  { id: 5, text: "Wishlist", path: "/wishlist" },
+  { id: 6, text: "Cart", path: "/cart" }
 ];
