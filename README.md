@@ -88,6 +88,3 @@ This project originally started as Create React App and was migrated to Vite for
 - `npm run build` - Build for production
 - `npm run preview` - Preview production build
 
-## License
-
-MIT
