@@ -5,7 +5,7 @@ import cartBcg from '../images/storeBcg.jpeg';
 
 function CartPage() {
   return (
-    <>
+    <></>
       <Hero img={cartBcg} title="shopping cart" />
       <Cart />
     </>
